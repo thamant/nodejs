@@ -5,7 +5,8 @@ const forecast = (latitude, longitude, callback) => {
     'https://api.darksky.net/forecast/afb418498e07cb8e49b97f7fd5c74c17/' +
     latitude +
     ',' +
-    longitude;
+    longitude +
+    '?units=si';
 
   request({ url, json: true }, (error, { body }) => {
     if (error) {
@@ -20,7 +21,11 @@ const forecast = (latitude, longitude, callback) => {
           body.currently.temperature +
           ' degrees out. There is a ' +
           body.currently.precipProbability +
-          '% chance of rain.'
+          '% chance of rain.' +
+          'The high today is ' +
+          body.daily.data[0].temperatureMax +
+          ' with a low of ' +
+          body.daily.data[0].temperatureMin
       );
     }
   });

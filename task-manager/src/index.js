@@ -1,5 +1,3 @@
-// C:\Users\Anthony\mongodb\bin\mongod.exe --dbpath "C:\Users\Anthony\mongodb-data"
-
 const express = require('express');
 require('./db/mongoose');
 const userRouter = require('./routers/user');
